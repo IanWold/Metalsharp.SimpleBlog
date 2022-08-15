@@ -1,14 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Authors>Ian Wold</Authors>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Authors>Ian Wold</Authors>
+		<Company />
+		<Copyright>Copyright (c) 2022 Ian Wold</Copyright>
+		<PackageLicenseUrl>https://github.com/IanWold/Metalsharp.SimpleBlog/blob/master/LICENSE</PackageLicenseUrl>
+		<PackageProjectUrl></PackageProjectUrl>
+		<PackageIconUrl>https://raw.githubusercontent.com/IanWold/Metalsharp/master/Icon.png</PackageIconUrl>
+		<RepositoryUrl>https://github.com/IanWold/Metalsharp.SimpleBlog</RepositoryUrl>
+		<RepositoryType>Git</RepositoryType>
+		<PackageTags>metalsharp blog</PackageTags>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<Description>Plugin for Metalsharp providing a barebones blog implementation.</Description>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Metalsharp" Version="0.9.0-rc.4" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Metalsharp" Version="0.9.0-rc.4" />
+	</ItemGroup>
 
 </Project>

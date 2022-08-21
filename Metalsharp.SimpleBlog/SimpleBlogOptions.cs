@@ -1,6 +1,6 @@
 ﻿namespace Metalsharp.SimpleBlog;
 
-public class BlogOptions
+public class SimpleBlogOptions
 {
 	public string PostsDirectory { get; set; } = "";
 
@@ -8,7 +8,7 @@ public class BlogOptions
 
 	public Func<MetalsharpFile, DateTime>? PostsOrderQuery { get; set; }
 
-	public Dictionary<string, object>? PostMetadata { get; set; }
+	public Func<MetalsharpFile, Dictionary<string, object>>? PostMetadata { get; set; }
 
 	public string BlogFilePath { get; set; } = "blog.html";
 

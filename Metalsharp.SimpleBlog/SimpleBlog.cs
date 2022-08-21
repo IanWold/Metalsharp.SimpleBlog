@@ -2,9 +2,9 @@
 
 public class SimpleBlog : IMetalsharpPlugin
 {
-	readonly BlogOptions _options;
+	readonly SimpleBlogOptions _options;
 
-	public SimpleBlog(BlogOptions? options = null) =>
+	public SimpleBlog(SimpleBlogOptions? options = null) =>
 		_options = options ?? new();
 
 	public void Execute(MetalsharpProject project)
@@ -24,7 +24,9 @@ public class SimpleBlog : IMetalsharpPlugin
 		{
 			if (_options.PostMetadata != null)
 			{
-				foreach (var (key, value) in _options.PostMetadata)
+				var postMetadata = _options.PostMetadata(file);
+
+				foreach (var (key, value) in postMetadata)
 				{
 					file.Metadata.Add(key, value);
 				}

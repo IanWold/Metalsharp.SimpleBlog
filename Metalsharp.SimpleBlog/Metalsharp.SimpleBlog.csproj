@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -9,7 +9,6 @@
 		<Copyright>Copyright (c) 2022 Ian Wold</Copyright>
 		<PackageLicenseUrl>https://github.com/IanWold/Metalsharp.SimpleBlog/blob/master/LICENSE</PackageLicenseUrl>
 		<PackageProjectUrl></PackageProjectUrl>
-		<PackageIconUrl>https://raw.githubusercontent.com/IanWold/Metalsharp/master/Icon.png</PackageIconUrl>
 		<RepositoryUrl>https://github.com/IanWold/Metalsharp.SimpleBlog</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
 		<PackageTags>metalsharp blog</PackageTags>

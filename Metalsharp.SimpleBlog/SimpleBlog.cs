@@ -1,11 +1,8 @@
 ﻿namespace Metalsharp.SimpleBlog;
 
-public class SimpleBlog : IMetalsharpPlugin
+public class SimpleBlog(SimpleBlogOptions? options = null) : IMetalsharpPlugin
 {
-	readonly SimpleBlogOptions _options;
-
-	public SimpleBlog(SimpleBlogOptions? options = null) =>
-		_options = options ?? new();
+	readonly SimpleBlogOptions _options = options ?? new();
 
 	public void Execute(MetalsharpProject project)
 	{
@@ -20,7 +17,7 @@ public class SimpleBlog : IMetalsharpPlugin
 				: postFiles.OrderBy(_options.PostsOrderQuery);
 		}
 
-		foreach (MetalsharpFile file in postFiles)
+		foreach (var file in postFiles)
 		{
 			if (_options.PostMetadata != null)
 			{
@@ -34,18 +31,15 @@ public class SimpleBlog : IMetalsharpPlugin
 
 			file.Metadata.Add("fileName", file.Name);
 
-			posts.Add(file.Metadata.ToDictionary(p => p.Key, p => p.Value));
+			posts.Add(file.Metadata.ToDictionary());
 		}
 
 		project.AddOutput(new MetalsharpFile("", _options.BlogFilePath)
 		{
-			Metadata =
-				(_options.BlogMetadata ?? new())
-				.Concat(new[]
-				{
-					new KeyValuePair<string, object>("posts", posts)
-				})
-				.ToDictionary(p => p.Key, p => p.Value)
+			Metadata = new Dictionary<string, object>(_options.BlogMetadata ?? [])
+			{
+				["posts"] = posts
+			}
 		});
 	}
 }

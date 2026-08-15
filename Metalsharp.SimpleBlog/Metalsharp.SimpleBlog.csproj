@@ -4,20 +4,38 @@
 		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>1.0.0</Version>
 		<Authors>Ian Wold</Authors>
-		<Company />
-		<Copyright>Copyright (c) 2022 Ian Wold</Copyright>
-		<PackageLicenseUrl>https://github.com/IanWold/Metalsharp.SimpleBlog/blob/master/LICENSE</PackageLicenseUrl>
-		<PackageProjectUrl></PackageProjectUrl>
+		<Copyright>Copyright (c) 2022-2026 Ian Wold</Copyright>
+		<Description>Plugin for Metalsharp providing a barebones blog implementation.</Description>
+		<PackageTags>metalsharp blog plugin static-site static-site-generator</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageProjectUrl>https://github.com/IanWold/Metalsharp.SimpleBlog</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/IanWold/Metalsharp.SimpleBlog</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
-		<PackageTags>metalsharp blog</PackageTags>
-		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-		<Description>Plugin for Metalsharp providing a barebones blog implementation.</Description>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Metalsharp" Version="1.0.1" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.400" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
